@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.appwatch.views.MainActivity2;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     String userId;
     Button resendCode;
-    Button resetPassLocal,changeProfileImage;
+    Button resetPassLocal,changeProfileImage,Shopping;
     FirebaseUser user;
     ImageView profileImage;
     StorageReference storageReference;
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         email    = findViewById(R.id.profileEmail);
         resetPassLocal = findViewById(R.id.resetPasswordLocal);
 
+        Shopping = findViewById(R.id.Main2);
         profileImage = findViewById(R.id.profileImage);
         changeProfileImage = findViewById(R.id.changeProfile);
 
@@ -157,6 +159,13 @@ public class MainActivity extends AppCompatActivity {
 
                 passwordResetDialog.create().show();
 
+            }
+        });
+
+        Shopping.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainActivity2.class));
             }
         });
 
